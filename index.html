@@ -15,8 +15,6 @@
 
         console.log(isUserInAttendance);
 
-        // initialize an empty [array in square brackets]
-        let cars = [];
 
         // {object is defined by curly braces}
         let smallCar = {
@@ -25,6 +23,18 @@
             fuelType: 'diesel'
 
         };
+
+        let smallTruck = {
+            engineSize: 6,
+            displacement: 4,
+            fuelType: 'regular'
+
+        }
+        // initialize empty array
+        let vehicles = [];
+        vehicles.push(smallCar);
+        vehicles.push(smallTruck);
+
 
         // (parameters in parathensis) {code of function in curly braces gets ran}
         function getEfficiencyRating(vehicle) {
@@ -47,11 +57,12 @@
                     rating = 4;
                     break;
                 default:
+                    rating = 0;
             }
 
 
             if (vehicle.fuelType == 'diesel') {
-                // increment += ++
+                // increment += ++.  ++ is the same as + 1
                 rating = rating + 1;
             }
 
@@ -59,10 +70,20 @@
 
         }
 
-        // actually sending the value of the variable into the function
-        let smallCarRating = getEfficiencyRating(smallCar);
+        console.log({ vehicles });
 
-        console.log(smallCarRating);
+        // forEach takes a function as its parameter
+        // 'vehicles' is an array. For each item in the array, the function will execute.
+        // have to add the parameter. "item" is used a lot.
+        vehicles.forEach(function (vehicle) {
+            let result = getEfficiencyRating(vehicle);
+            console.log({ result })
+        });
+
+        // alternative looping method
+        for (let index = 0; index < vehicles.length; index++) {
+            console.log(vehicles[index]);
+        }
 
     </script>
 
