@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,10 +15,61 @@
 
         console.log(isUserInAttendance);
 
+        // initialize an empty [array in square brackets]
+        let cars = [];
+
+        // {object is defined by curly braces}
+        let smallCar = {
+            engineSize: 4,
+            displacement: 2,
+            fuelType: 'diesel'
+
+        };
+
+        // (parameters in parathensis) {code of function in curly braces gets ran}
+        function getEfficiencyRating(vehicle) {
+            let rating = 0;
+
+            // slide 15 & 16 have info on 'switch'
+            switch (vehicle.engineSize) {
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                    rating = 8;
+                    break;
+                case 5:
+                case 6:
+                    rating = 6;
+                    break;
+                case 7:
+                case 8:
+                    rating = 4;
+                    break;
+                default: 0
+            }
+
+
+            if (vehicle.fuelType == 'diesel') {
+                // increment += ++
+                rating = rating + 1;
+            }
+
+            return rating;
+
+        }
+
+        // actually sending the value of the variable into the function
+        let smallCarRating = getEfficiencyRating(smallCar);
+
+        console.log(smallCarRating);
+
     </script>
 
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
